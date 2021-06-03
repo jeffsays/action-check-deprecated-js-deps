@@ -7,14 +7,19 @@ async function run() {
     const allDeps = getAllDeps();
     core.debug(JSON.stringify([...allDeps]));
     const deprecations = await checkForDeprecations(allDeps);
-    core.setOutput("deprecated", [...deprecations].join(","));
+    //core.setOutput("deprecated", [...deprecations].join(","));
     if (deprecations.size)
-      core.setFailed(`Deprecated: ${[...deprecations].join(", ")}`);
+      // core.setFailed(`Deprecated: ${[...deprecations].join(", ")}`);
+      core.setOutput("deprecated", [...deprecations].join(","));
     else
-      console.info(
-        "✅ Checked %d dependencies and no deprecated dependencies found",
-        allDeps.size
+      core.setOutput(
+        "deprecated",
+        "✅ Checked dependencies and no deprecated dependencies found"
       );
+    console.info(
+      "✅ Checked %d dependencies and no deprecated dependencies found",
+      allDeps.size
+    );
   } catch (error) {
     core.setFailed(error.message);
   }
