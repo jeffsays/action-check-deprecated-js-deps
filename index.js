@@ -16,10 +16,10 @@ async function run() {
         "deprecated",
         "✅ Checked dependencies and no deprecated dependencies found"
       );
-    console.info(
-      "✅ Checked %d dependencies and no deprecated dependencies found",
-      allDeps.size
-    );
+      console.info(
+        "✅ Checked %d dependencies and no deprecated dependencies found",
+        allDeps.size
+      );
   } catch (error) {
     core.setFailed(error.message);
   }
