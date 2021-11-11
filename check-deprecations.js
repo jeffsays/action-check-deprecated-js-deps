@@ -43,7 +43,11 @@ export default async function checkDeprecations(allDeps) {
       }
       if (modulesToIgnore.has(name))
         core.warning(`Ignoring deprecation of ${name}...`);
-      else deprecated.add(name);
+      else {
+        for (const pk of pkgs) {
+          deprecated.add(`- **[${pk.type}] [${name}](https://www.npmjs.com/package/${name})@${pk.version}**: ${pi.deprecated}`);
+        }
+      }
     }
   }
   return deprecated;
