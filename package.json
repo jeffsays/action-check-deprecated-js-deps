@@ -27,11 +27,11 @@
   },
   "homepage": "https://github.com/tinovyatkin/action-check-deprecated-js-deps#readme",
   "dependencies": {
-    "@actions/core": "^1.6.0",
+    "@actions/core": "^1.9.1",
     "get-monorepo-packages": "1.2.0",
     "load-json-file": "6.2.0",
     "package-json": "6.5.0",
-    "semver": "7.3.2"
+    "semver": "7.5.2"
   },
   "devDependencies": {
     "@babel/preset-env": "7.8.7",
@@ -43,7 +43,7 @@
     "jest": "26.1.0",
     "lint-staged": "^11.2.6",
     "prettier": "2.0.5",
-    "rollup": "2.1.0",
+    "rollup": "2.79.2",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-terser": "6.1.0"
   },
